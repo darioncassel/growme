@@ -1,25 +1,160 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="EPk-hz-OGN">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="ufC-wZ-h7g">
+        <!--Main Screen-->
+        <scene sceneID="EiQ-Ka-ooR">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
-                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <navigationController title="Main Screen" id="EPk-hz-OGN" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="F4g-r8-c3R">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="XsM-Ft-WW4" kind="relationship" relationship="rootViewController" id="UMG-59-z8u"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fe8-qd-9ul" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-32" y="-90"/>
+        </scene>
+        <!--Plants-->
+        <scene sceneID="pWo-XR-ibf">
+            <objects>
+                <viewController id="XsM-Ft-WW4" customClass="PlantsViewController" customModule="GrowMe_" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xHz-ml-zCK"/>
+                        <viewControllerLayoutGuide type="bottom" id="HRQ-Fc-GJb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8m4-UJ-tuY">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="fro-Km-nMm">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlantCell" id="59Q-9d-Eag" customClass="PlantsTableViewCell" customModule="GrowMe_" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="59Q-9d-Eag" id="Sqo-Dv-bbZ">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="ta3-GU-Wxd" kind="show" identifier="editPlant" id="gkA-ih-Vve"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="XsM-Ft-WW4" id="N2W-ce-9BW"/>
+                                    <outlet property="delegate" destination="XsM-Ft-WW4" id="UBQ-Nr-fid"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fro-Km-nMm" firstAttribute="leading" secondItem="8m4-UJ-tuY" secondAttribute="leadingMargin" constant="-16" id="96E-si-L7Y"/>
+                            <constraint firstItem="fro-Km-nMm" firstAttribute="top" secondItem="xHz-ml-zCK" secondAttribute="top" id="BTr-Lh-buf" userLabel="Vertical Space - Table View - Top Layout Guide"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fro-Km-nMm" secondAttribute="trailing" constant="-16" id="dGm-n2-EJL"/>
+                            <constraint firstItem="HRQ-Fc-GJb" firstAttribute="top" secondItem="fro-Km-nMm" secondAttribute="bottom" id="jmw-Mj-Pgg"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Plants" id="QkX-Ak-nH0">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="j37-jX-wlx">
+                            <connections>
+                                <action selector="addPlant:" destination="XsM-Ft-WW4" id="q5n-yX-NIT"/>
+                                <segue destination="vcE-pb-mZt" kind="show" id="4gu-U3-azX"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="fro-Km-nMm" id="4ie-J4-K5e"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J4T-0u-vWa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="673" y="-90"/>
+        </scene>
+        <!--Add Plant-->
+        <scene sceneID="7sU-S9-AKw">
+            <objects>
+                <navigationController title="Add Plant" id="vcE-pb-mZt" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="LLp-4W-UVv">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="nYn-WB-BdM" kind="relationship" relationship="rootViewController" id="iUO-Op-zIE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9ii-gt-YCf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="673" y="650"/>
+        </scene>
+        <!--Edit Plant-->
+        <scene sceneID="O6s-l5-iJY">
+            <objects>
+                <navigationController title="Edit Plant" id="ta3-GU-Wxd" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4g0-Pl-zjF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="d3s-XT-3xN" kind="relationship" relationship="rootViewController" id="g5a-8Y-dib"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ptm-4v-hWZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1373" y="-90"/>
+        </scene>
+        <!--Edit This Plant-->
+        <scene sceneID="aIE-Hy-NfL">
+            <objects>
+                <viewController title="Edit This Plant" id="d3s-XT-3xN" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Lbq-W4-B41"/>
+                        <viewControllerLayoutGuide type="bottom" id="9tt-WU-1tk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Twa-jZ-cRe">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="CBr-WS-Utx"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QUQ-Lt-pWg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2060" y="-90"/>
+        </scene>
+        <!--Add a Plant-->
+        <scene sceneID="RAa-QY-TaH">
+            <objects>
+                <viewController id="nYn-WB-BdM" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2U4-1n-4Cy"/>
+                        <viewControllerLayoutGuide type="bottom" id="pXR-2o-yRg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mGf-iU-1hp">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="se6-lp-iQY">
+                                <rect key="frame" x="277" y="285" width="46" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add a Plant" id="Eoa-Ky-sXi"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yLf-r0-3eD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1373" y="650"/>
         </scene>
     </scenes>
 </document>
