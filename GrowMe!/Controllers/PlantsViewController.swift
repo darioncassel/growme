@@ -22,6 +22,10 @@ class PlantsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         let realm = Realm()
         plants = realm.objects(Plant)
     }
@@ -48,12 +52,13 @@ extension PlantsViewController: UITableViewDataSource {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("PlantCell", forIndexPath: indexPath) as! PlantsTableViewCell
-        
+        let plant = plants[indexPath.row] as Plant
+        cell.plant = plant
         return cell;
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1;
+        return Int(plants?.count ?? 0)
     }
     
 }
@@ -61,7 +66,7 @@ extension PlantsViewController: UITableViewDataSource {
 extension PlantsViewController: UITableViewDelegate {
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.performSegueWithIdentifier("editPlant", sender: self)
+        // none
     }
     
     func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
