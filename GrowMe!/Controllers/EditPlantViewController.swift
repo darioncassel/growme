@@ -71,7 +71,7 @@ class EditPlantViewController: UIViewController {
                 plant.location = self.locArr[self.location.selectedSegmentIndex]
                 plant.light = self.lightArr[self.light.selectedSegmentIndex]
                 plant.notify = self.notify.on
-                plant.schedule =  Schedule(size: plant.size, type: plant.type, light: plant.light, firstDay: plant.firstDay)
+                plant.schedule =  Schedule(size: plant.size, type: plant.type, light: plant.light, location: plant.location, firstDay: plant.firstDay, weatherEffects: nil)
                 realm.add(plant)
             }
         }

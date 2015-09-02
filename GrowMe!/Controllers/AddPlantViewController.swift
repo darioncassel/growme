@@ -75,6 +75,8 @@ class AddPlantViewController: UIViewController {
                         weatherEffects[i] = (rain, humidity)
                     }
                     
+                    plant.schedule = Schedule(size: plant.size, type: plant.type, light: plant.light, location: plant.location, firstDay: plant.firstDay, weatherEffects: weatherEffects)
+
                 }.resume()
             }
         }.resume()
