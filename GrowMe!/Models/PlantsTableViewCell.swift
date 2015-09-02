@@ -9,6 +9,16 @@
 import UIKit
 
 class PlantsTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var plantCellTitle: UILabel!
+    
+    var plant: Plant? {
+        didSet {
+            if let plant = plant, plantCellTitle = plantCellTitle {
+                plantCellTitle.text = plant.name
+            }
+        }
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -20,5 +30,6 @@ class PlantsTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+
 
 }

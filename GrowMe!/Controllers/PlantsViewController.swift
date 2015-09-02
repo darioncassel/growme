@@ -27,7 +27,7 @@ class PlantsViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         let realm = Realm()
-        plants = realm.objects(Plant)
+        plants = realm.objects(Plant).sorted("created", ascending: false)
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,15 +36,16 @@ class PlantsViewController: UIViewController {
     }
     
 
-    /*
+
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "editPlant" {
+            var cell = sender as! PlantsTableViewCell
+            var destination = segue.destinationViewController as! EditPlantViewController
+            destination.plant = sender!.plant
+        }
     }
-    */
 
 }
 
