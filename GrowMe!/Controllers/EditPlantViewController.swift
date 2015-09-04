@@ -29,7 +29,6 @@ class EditPlantViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -62,8 +61,8 @@ class EditPlantViewController: UIViewController {
     
     @IBAction func savePressed(sender: UIBarButtonItem) {
         name.endEditing(true)
-        let realm = Realm()
         if let plant = plant {
+            let realm = Realm()
             realm.write() {
                 plant.name = self.name.text
                 plant.size = self.sizeArr[self.size.selectedSegmentIndex]
@@ -71,7 +70,15 @@ class EditPlantViewController: UIViewController {
                 plant.location = self.locArr[self.location.selectedSegmentIndex]
                 plant.light = self.lightArr[self.light.selectedSegmentIndex]
                 plant.notify = self.notify.on
-                plant.schedule =  Schedule(size: plant.size, type: plant.type, light: plant.light, location: plant.location, firstDay: plant.firstDay, weatherEffects: nil)
+                
+                if plant.location == "Outdoors" {
+                    WeatherHelper.getWeatherInfo(plant, zip: plant.zipcode) { weatherEffects in
+                        plant.weatherEffects = weatherEffects
+                    }
+                } else {
+                    plant.schedule = Schedule(size: plant.size, type: plant.type, light: plant.light, location: plant.location, firstDay: plant.firstDay, weatherEffects: plant.weatherEffects)
+                }
+                
                 realm.add(plant)
             }
         }

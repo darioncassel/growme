@@ -30,7 +30,9 @@ class AddPlantViewController: UIViewController {
             if validateZipcode(zipcode.text) == 1 {
                 if let plant = plant {
                     plant.zipcode = zipcode.text
-                    getWeatherInfo(plant, zip: plant.zipcode)
+                    WeatherHelper.getWeatherInfo(plant, zip: plant.zipcode) { weatherEffects in
+                        plant.weatherEffects = weatherEffects
+                    }
                 }
                 self.performSegueWithIdentifier(self.restorationIdentifier, sender: self)
             } else {
@@ -46,49 +48,7 @@ class AddPlantViewController: UIViewController {
         return pattern!.numberOfMatchesInString(zip, options: NSMatchingOptions.allZeros, range: NSMakeRange(0, count(zip)))
     }
     
-    func getWeatherInfo(plant: Plant, zip: String) {
         
-        let zipurl = NSURL(string: "http://api.openweathermap.org/data/2.5/weather?zip=\(zip),us&APPID=\(APIkeys().openweathermap)")
-        NSURLSession.sharedSession().dataTaskWithURL(zipurl!) { data, response, error in
-            
-            var jsonResult = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: NSErrorPointer()) as! NSDictionary
-            
-            var id = jsonResult.valueForKey("id") as! NSNumber
-            plant.cityid = id.stringValue
-            
-            if plant.cityid != "" {
-                
-                let cityurl = NSURL(string: "http://api.openweathermap.org/data/2.5/forecast/daily?id=\(plant.cityid)&cnt=7&APPID=\(APIkeys().openweathermap)")
-                NSURLSession.sharedSession().dataTaskWithURL(cityurl!) { data, response, error in
-                    
-                    var jsonResult = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: NSErrorPointer()) as! NSDictionary
-                    
-                    var dayNum = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!.components(.CalendarUnitWeekday, fromDate: NSDate()).weekday - 1
-                    
-                    var weather = jsonResult.valueForKey("list") as! NSArray
-                    var weatherEffects = Dictionary<Int, (Bool, Int)>()
-                    
-                    for i in dayNum...6 {
-                        var day = weather[i] as! NSDictionary
-                        var rain = self.isRain(day.valueForKey("weather")!.valueForKey("main")![0] as! String)
-                        var humidity = day.valueForKey("humidity")! as! Int
-                        weatherEffects[i] = (rain, humidity)
-                    }
-                    
-                    plant.schedule = Schedule(size: plant.size, type: plant.type, light: plant.light, location: plant.location, firstDay: plant.firstDay, weatherEffects: weatherEffects)
-
-                }.resume()
-            }
-        }.resume()
-    }
-    
-    func isRain(condition: String) -> Bool {
-        if condition == "Rain" {
-            return true
-        }
-        return false
-    }
-    
     
     // MARK: - Navigation
 

@@ -18,11 +18,23 @@ class Plant: Object {
     dynamic var light: String = ""
     dynamic var firstDay: Int = 0
     dynamic var zipcode: String = ""
-    dynamic var cityid: String = ""
     dynamic var notify: Bool = true
     dynamic var created: String = "Jan 1, 1970, 12:00 AM"
+    dynamic var schedule: Schedule?
     
-    dynamic var schedule = Schedule()
+    var weatherEffects: Dictionary<Int, (Bool, Int)>? {
+        didSet {
+            dispatch_async(dispatch_get_main_queue()) {
+                autoreleasepool {
+                    let realm = Realm()
+                    realm.write() {
+                        self.schedule = Schedule(size: self.size, type: self.type, light: self.light, location: self.location, firstDay: self.firstDay, weatherEffects: self.weatherEffects)
+                        realm.add(self)
+                    }
+                }
+            }
+        }
+    }
     
 }
 

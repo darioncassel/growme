@@ -17,9 +17,10 @@
 		FC6E8BA01B781DD6008F4FDA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC6E8B9F1B781DD6008F4FDA /* Images.xcassets */; };
 		FC6E8BA31B781DD6008F4FDA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC6E8BA11B781DD6008F4FDA /* LaunchScreen.xib */; };
 		FC6E8BAF1B781DD6008F4FDA /* GrowMe_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6E8BAE1B781DD6008F4FDA /* GrowMe_Tests.swift */; };
+		FC6F9C791B97F77C0095D431 /* APIkeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6F9C781B97F77C0095D431 /* APIkeys.swift */; };
+		FC6F9C7E1B9899140095D431 /* WeatherHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6F9C7D1B9899140095D431 /* WeatherHelper.swift */; };
 		FC9FC06B1B935D250020FBA7 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9FC06A1B935D250020FBA7 /* ScheduleViewController.swift */; };
 		FC9FC06D1B9651FD0020FBA7 /* AddPlantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9FC06C1B9651FD0020FBA7 /* AddPlantViewController.swift */; };
-		FC9FC06F1B9655D70020FBA7 /* APIkeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9FC06E1B9655D70020FBA7 /* APIkeys.swift */; };
 		FC9FC0711B9656430020FBA7 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = FC9FC0701B9656430020FBA7 /* .gitignore */; };
 		FCDF41331B79976B0050E92E /* Plant.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDF41321B79976B0050E92E /* Plant.swift */; };
 		FCDF41371B79A8390050E92E /* EditPlantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDF41361B79A8390050E92E /* EditPlantViewController.swift */; };
@@ -57,9 +58,10 @@
 		FC6E8BA81B781DD6008F4FDA /* GrowMe!Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "GrowMe!Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC6E8BAD1B781DD6008F4FDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC6E8BAE1B781DD6008F4FDA /* GrowMe_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowMe_Tests.swift; sourceTree = "<group>"; };
+		FC6F9C781B97F77C0095D431 /* APIkeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIkeys.swift; sourceTree = "<group>"; };
+		FC6F9C7D1B9899140095D431 /* WeatherHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherHelper.swift; sourceTree = "<group>"; };
 		FC9FC06A1B935D250020FBA7 /* ScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
 		FC9FC06C1B9651FD0020FBA7 /* AddPlantViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPlantViewController.swift; sourceTree = "<group>"; };
-		FC9FC06E1B9655D70020FBA7 /* APIkeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIkeys.swift; sourceTree = "<group>"; };
 		FC9FC0701B9656430020FBA7 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		FCDF41321B79976B0050E92E /* Plant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Plant.swift; sourceTree = "<group>"; };
 		FCDF41361B79A8390050E92E /* EditPlantViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditPlantViewController.swift; sourceTree = "<group>"; };
@@ -133,14 +135,15 @@
 			isa = PBXGroup;
 			children = (
 				FC6E8B981B781DD6008F4FDA /* AppDelegate.swift */,
+				FC6F9C781B97F77C0095D431 /* APIkeys.swift */,
 				FC6E8B9C1B781DD6008F4FDA /* Main.storyboard */,
 				FCFF381D1B79897300CF2C80 /* Controllers */,
 				FCFF381F1B79897300CF2C80 /* Models */,
 				FCFF38201B79897300CF2C80 /* Views */,
+				FC6F9C7C1B9898F90095D431 /* Helpers */,
 				FC6E8B9F1B781DD6008F4FDA /* Images.xcassets */,
 				FC6E8BA11B781DD6008F4FDA /* LaunchScreen.xib */,
 				FC6E8B961B781DD6008F4FDA /* Supporting Files */,
-				FC9FC06E1B9655D70020FBA7 /* APIkeys.swift */,
 			);
 			path = "GrowMe!";
 			sourceTree = "<group>";
@@ -168,6 +171,14 @@
 				FC6E8BAD1B781DD6008F4FDA /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FC6F9C7C1B9898F90095D431 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				FC6F9C7D1B9899140095D431 /* WeatherHelper.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		FCFF381D1B79897300CF2C80 /* Controllers */ = {
@@ -403,11 +414,12 @@
 			files = (
 				FC29486A1B8FEF36001A53A9 /* PickerViewController.swift in Sources */,
 				FCDF41391B7ACFC60050E92E /* ChoicesViewController.swift in Sources */,
+				FC6F9C7E1B9899140095D431 /* WeatherHelper.swift in Sources */,
 				FC0625681B8E05A600EA5E95 /* Day.swift in Sources */,
 				FC06256A1B8E06B100EA5E95 /* Schedule.swift in Sources */,
 				FCFF38271B798A4000CF2C80 /* PlantsTableViewCell.swift in Sources */,
 				FCDF41371B79A8390050E92E /* EditPlantViewController.swift in Sources */,
-				FC9FC06F1B9655D70020FBA7 /* APIkeys.swift in Sources */,
+				FC6F9C791B97F77C0095D431 /* APIkeys.swift in Sources */,
 				FCDF41331B79976B0050E92E /* Plant.swift in Sources */,
 				FCFF382C1B798C3800CF2C80 /* PlantsViewController.swift in Sources */,
 				FC9FC06D1B9651FD0020FBA7 /* AddPlantViewController.swift in Sources */,

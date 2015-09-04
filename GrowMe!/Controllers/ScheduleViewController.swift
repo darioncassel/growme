@@ -27,7 +27,7 @@ class ScheduleViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         if let plant = plant {
-            var schedule = plant.schedule.freq
+            var schedule = plant.schedule!.freq
             for day in schedule {
                 var amt = String(format: "%.1f", day.amount) + " oz"
                 activateButton(day.number, amt: amt)

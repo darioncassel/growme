@@ -46,7 +46,6 @@ class PickerViewController: UIViewController {
         if let plant = plant {
             plant.firstDay = firstDay
             plant.created = currentDate
-            plant.schedule = Schedule(size: plant.size, type: plant.type, light: plant.light, location: plant.location, firstDay: plant.firstDay, weatherEffects: nil)
         }
         if segue.identifier == "goToEditPlant" {
             let destinationViewController = segue.destinationViewController as! EditPlantViewController
