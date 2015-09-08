@@ -41,8 +41,8 @@ class PickerViewController: UIViewController {
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         var currentDate = NSDateFormatter.localizedStringFromDate(NSDate(), dateStyle: .MediumStyle, timeStyle: .LongStyle)
-        var day = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!.components(.CalendarUnitDay, fromDate: NSDate()).weekday - 1
-        var firstDay = abs((day - choice) % 7)
+        var day = DateHelper.today()
+        var firstDay = abs((day - choice) % 6)
         if let plant = plant {
             plant.firstDay = firstDay
             plant.created = currentDate

@@ -17,28 +17,33 @@ class Schedule: Object {
     
     dynamic var freq = List<Day>()
     
-    convenience init(size: String, type: String, light: String, location: String, firstDay: Int, weatherEffects: Dictionary<Int, (Bool, Int)>?) {
+    convenience init(size: String, type: String, light: String, location: String, firstDay: Int, weatherEffects: Dictionary<Int, (Bool, Int)>?, completed: List<Day>?) {
         self.init()
         
         var size = intMatcher(size, array: sizeArray)
         var type = intMatcher(type, array: typeArray)
         var light = intMatcher(light, array: lightArray)
-        
-        var outdoors = false
-        if location == "Outdoors" {
-            outdoors = true
-        }
 
         var freq = Int(type*light)                               // Days per week
         var amt = (size+0.5)*log((type+1)*(light+1))             // Amout of water in oz
 
         for x in 0...freq {
-            let num = (firstDay + freq*x)%7
+            let num = (firstDay + freq*x + 1)%7
             let thisDay = Day(number: num, complete: false, amount: amt)
             self.freq.append(thisDay)
         }
         
-        if outdoors {
+        if let completed = completed {
+            for x in completed {
+                for day in self.freq {
+                    if x.number == day.number {
+                        day.complete = true
+                    }
+                }
+            }
+        }
+        
+        if location == "Outdoors" {
             if let weatherEffects = weatherEffects {
                 for num in weatherEffects.keys {
                     for day in self.freq {
@@ -49,6 +54,7 @@ class Schedule: Object {
                             day.setValue(amt, forKey: "amount")
                             if weatherEffects[num]!.0 {
                                 day.setValue(0, forKey: "amount")
+                                day.complete = true
                             }
                         }
                     }

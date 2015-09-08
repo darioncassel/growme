@@ -11,6 +11,8 @@
 		5AC3FFE7827CD95837C39521 /* Pods_GrowMe_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A3DA4DABCED0F53133655EC /* Pods_GrowMe_Tests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		FC0625681B8E05A600EA5E95 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0625671B8E05A600EA5E95 /* Day.swift */; };
 		FC06256A1B8E06B100EA5E95 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0625691B8E06B100EA5E95 /* Schedule.swift */; };
+		FC15BA2C1B9A566300D82242 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC15BA2B1B9A566300D82242 /* DateHelper.swift */; };
+		FC15BA2E1B9CFCDE00D82242 /* ColorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC15BA2D1B9CFCDE00D82242 /* ColorHelper.swift */; };
 		FC29486A1B8FEF36001A53A9 /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2948691B8FEF36001A53A9 /* PickerViewController.swift */; };
 		FC6E8B991B781DD6008F4FDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6E8B981B781DD6008F4FDA /* AppDelegate.swift */; };
 		FC6E8B9E1B781DD6008F4FDA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC6E8B9C1B781DD6008F4FDA /* Main.storyboard */; };
@@ -48,14 +50,16 @@
 		E49D5458802AA0C00D51DA25 /* Pods-GrowMe!Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GrowMe!Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GrowMe!Tests/Pods-GrowMe!Tests.release.xcconfig"; sourceTree = "<group>"; };
 		FC0625671B8E05A600EA5E95 /* Day.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
 		FC0625691B8E06B100EA5E95 /* Schedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
+		FC15BA2B1B9A566300D82242 /* DateHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
+		FC15BA2D1B9CFCDE00D82242 /* ColorHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorHelper.swift; sourceTree = "<group>"; };
 		FC2948691B8FEF36001A53A9 /* PickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerViewController.swift; sourceTree = "<group>"; };
-		FC6E8B931B781DD6008F4FDA /* GrowMe!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GrowMe!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC6E8B931B781DD6008F4FDA /* GrowMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GrowMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC6E8B971B781DD6008F4FDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC6E8B981B781DD6008F4FDA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FC6E8B9D1B781DD6008F4FDA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FC6E8B9F1B781DD6008F4FDA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FC6E8BA21B781DD6008F4FDA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		FC6E8BA81B781DD6008F4FDA /* GrowMe!Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "GrowMe!Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC6E8BA81B781DD6008F4FDA /* GrowMeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GrowMeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC6E8BAD1B781DD6008F4FDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC6E8BAE1B781DD6008F4FDA /* GrowMe_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowMe_Tests.swift; sourceTree = "<group>"; };
 		FC6F9C781B97F77C0095D431 /* APIkeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIkeys.swift; sourceTree = "<group>"; };
@@ -114,7 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				FC9FC0701B9656430020FBA7 /* .gitignore */,
-				FC6E8B951B781DD6008F4FDA /* GrowMe! */,
+				FC6E8B951B781DD6008F4FDA /* GrowMe */,
 				FC6E8BAB1B781DD6008F4FDA /* GrowMe!Tests */,
 				FC6E8B941B781DD6008F4FDA /* Products */,
 				417B56F360C5F2967971F4D3 /* Pods */,
@@ -125,13 +129,13 @@
 		FC6E8B941B781DD6008F4FDA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FC6E8B931B781DD6008F4FDA /* GrowMe!.app */,
-				FC6E8BA81B781DD6008F4FDA /* GrowMe!Tests.xctest */,
+				FC6E8B931B781DD6008F4FDA /* GrowMe.app */,
+				FC6E8BA81B781DD6008F4FDA /* GrowMeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		FC6E8B951B781DD6008F4FDA /* GrowMe! */ = {
+		FC6E8B951B781DD6008F4FDA /* GrowMe */ = {
 			isa = PBXGroup;
 			children = (
 				FC6E8B981B781DD6008F4FDA /* AppDelegate.swift */,
@@ -145,6 +149,7 @@
 				FC6E8BA11B781DD6008F4FDA /* LaunchScreen.xib */,
 				FC6E8B961B781DD6008F4FDA /* Supporting Files */,
 			);
+			name = GrowMe;
 			path = "GrowMe!";
 			sourceTree = "<group>";
 		};
@@ -177,6 +182,8 @@
 			isa = PBXGroup;
 			children = (
 				FC6F9C7D1B9899140095D431 /* WeatherHelper.swift */,
+				FC15BA2B1B9A566300D82242 /* DateHelper.swift */,
+				FC15BA2D1B9CFCDE00D82242 /* ColorHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -215,9 +222,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		FC6E8B921B781DD6008F4FDA /* GrowMe! */ = {
+		FC6E8B921B781DD6008F4FDA /* GrowMe */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FC6E8BB21B781DD6008F4FDA /* Build configuration list for PBXNativeTarget "GrowMe!" */;
+			buildConfigurationList = FC6E8BB21B781DD6008F4FDA /* Build configuration list for PBXNativeTarget "GrowMe" */;
 			buildPhases = (
 				1D6423747862B81FF0361682 /* Check Pods Manifest.lock */,
 				FC6E8B8F1B781DD6008F4FDA /* Sources */,
@@ -230,14 +237,14 @@
 			);
 			dependencies = (
 			);
-			name = "GrowMe!";
+			name = GrowMe;
 			productName = "GrowMe!";
-			productReference = FC6E8B931B781DD6008F4FDA /* GrowMe!.app */;
+			productReference = FC6E8B931B781DD6008F4FDA /* GrowMe.app */;
 			productType = "com.apple.product-type.application";
 		};
-		FC6E8BA71B781DD6008F4FDA /* GrowMe!Tests */ = {
+		FC6E8BA71B781DD6008F4FDA /* GrowMeTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FC6E8BB51B781DD6008F4FDA /* Build configuration list for PBXNativeTarget "GrowMe!Tests" */;
+			buildConfigurationList = FC6E8BB51B781DD6008F4FDA /* Build configuration list for PBXNativeTarget "GrowMeTests" */;
 			buildPhases = (
 				DE0F73C835C73FBFDECC00A7 /* Check Pods Manifest.lock */,
 				FC6E8BA41B781DD6008F4FDA /* Sources */,
@@ -251,9 +258,9 @@
 			dependencies = (
 				FC6E8BAA1B781DD6008F4FDA /* PBXTargetDependency */,
 			);
-			name = "GrowMe!Tests";
+			name = GrowMeTests;
 			productName = "GrowMe!Tests";
-			productReference = FC6E8BA81B781DD6008F4FDA /* GrowMe!Tests.xctest */;
+			productReference = FC6E8BA81B781DD6008F4FDA /* GrowMeTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -274,7 +281,7 @@
 					};
 				};
 			};
-			buildConfigurationList = FC6E8B8E1B781DD6008F4FDA /* Build configuration list for PBXProject "GrowMe!" */;
+			buildConfigurationList = FC6E8B8E1B781DD6008F4FDA /* Build configuration list for PBXProject "GrowMe" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -287,8 +294,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				FC6E8B921B781DD6008F4FDA /* GrowMe! */,
-				FC6E8BA71B781DD6008F4FDA /* GrowMe!Tests */,
+				FC6E8B921B781DD6008F4FDA /* GrowMe */,
+				FC6E8BA71B781DD6008F4FDA /* GrowMeTests */,
 			);
 		};
 /* End PBXProject section */
@@ -413,10 +420,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC29486A1B8FEF36001A53A9 /* PickerViewController.swift in Sources */,
+				FC15BA2E1B9CFCDE00D82242 /* ColorHelper.swift in Sources */,
 				FCDF41391B7ACFC60050E92E /* ChoicesViewController.swift in Sources */,
 				FC6F9C7E1B9899140095D431 /* WeatherHelper.swift in Sources */,
 				FC0625681B8E05A600EA5E95 /* Day.swift in Sources */,
 				FC06256A1B8E06B100EA5E95 /* Schedule.swift in Sources */,
+				FC15BA2C1B9A566300D82242 /* DateHelper.swift in Sources */,
 				FCFF38271B798A4000CF2C80 /* PlantsTableViewCell.swift in Sources */,
 				FCDF41371B79A8390050E92E /* EditPlantViewController.swift in Sources */,
 				FC6F9C791B97F77C0095D431 /* APIkeys.swift in Sources */,
@@ -441,7 +450,7 @@
 /* Begin PBXTargetDependency section */
 		FC6E8BAA1B781DD6008F4FDA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = FC6E8B921B781DD6008F4FDA /* GrowMe! */;
+			target = FC6E8B921B781DD6008F4FDA /* GrowMe */;
 			targetProxy = FC6E8BA91B781DD6008F4FDA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -554,7 +563,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "GrowMe!/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = GrowMe;
 			};
 			name = Debug;
 		};
@@ -565,7 +574,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "GrowMe!/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = GrowMe;
 			};
 			name = Release;
 		};
@@ -584,7 +593,7 @@
 				);
 				INFOPLIST_FILE = "GrowMe!Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = GrowMeTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GrowMe!.app/GrowMe!";
 			};
 			name = Debug;
@@ -600,7 +609,7 @@
 				);
 				INFOPLIST_FILE = "GrowMe!Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = GrowMeTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GrowMe!.app/GrowMe!";
 			};
 			name = Release;
@@ -608,7 +617,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		FC6E8B8E1B781DD6008F4FDA /* Build configuration list for PBXProject "GrowMe!" */ = {
+		FC6E8B8E1B781DD6008F4FDA /* Build configuration list for PBXProject "GrowMe" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FC6E8BB01B781DD6008F4FDA /* Debug */,
@@ -617,7 +626,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FC6E8BB21B781DD6008F4FDA /* Build configuration list for PBXNativeTarget "GrowMe!" */ = {
+		FC6E8BB21B781DD6008F4FDA /* Build configuration list for PBXNativeTarget "GrowMe" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FC6E8BB31B781DD6008F4FDA /* Debug */,
@@ -626,7 +635,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FC6E8BB51B781DD6008F4FDA /* Build configuration list for PBXNativeTarget "GrowMe!Tests" */ = {
+		FC6E8BB51B781DD6008F4FDA /* Build configuration list for PBXNativeTarget "GrowMeTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FC6E8BB61B781DD6008F4FDA /* Debug */,

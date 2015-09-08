@@ -14,6 +14,7 @@ class Day: Object {
     dynamic var name: String = ""
     dynamic var number: Int = 0
     dynamic var complete: Bool = false
+    dynamic var notified: Bool = false
     dynamic var amount: Double = 0
 
     let dayArr = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]

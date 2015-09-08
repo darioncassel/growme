@@ -33,6 +33,19 @@ class EditPlantViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
+        // styling
+        self.view.backgroundColor = UIColor.whiteColor()
+        for view in self.view.subviews[0].subviews {
+            if view.isKindOfClass(UILabel) {
+                var view = view as! UILabel
+                view.textColor = ColorHelper.greenText
+            }
+        }
+        name.textColor = ColorHelper.greenText
+        self.view.tintColor = ColorHelper.greenText
+        // end styling
+        
         if let plant = plant {
             name.text = plant.name
             segmentSolver(plant.size, array: sizeArr, segment: size)
@@ -71,12 +84,12 @@ class EditPlantViewController: UIViewController {
                 plant.light = self.lightArr[self.light.selectedSegmentIndex]
                 plant.notify = self.notify.on
                 
-                if plant.location == "Outdoors" {
+                if plant.useWeather {
                     WeatherHelper.getWeatherInfo(plant, zip: plant.zipcode) { weatherEffects in
                         plant.weatherEffects = weatherEffects
                     }
                 } else {
-                    plant.schedule = Schedule(size: plant.size, type: plant.type, light: plant.light, location: plant.location, firstDay: plant.firstDay, weatherEffects: plant.weatherEffects)
+                    plant.schedule = Schedule(size: plant.size, type: plant.type, light: plant.light, location: plant.location, firstDay: plant.firstDay, weatherEffects: plant.weatherEffects, completed: plant.completed)
                 }
                 
                 realm.add(plant)

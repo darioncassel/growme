@@ -26,25 +26,46 @@ class ScheduleViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
+        // styling
+        for view in self.view.subviews[0].subviews {
+            var view = view as! UIView
+            view.backgroundColor = UIColor.whiteColor()
+            view.layer.borderWidth = 0.7
+            view.layer.cornerRadius = 2
+            view.layer.borderColor = ColorHelper.greenText.CGColor
+            for subview in view.subviews {
+                if subview.isKindOfClass(UILabel) {
+                    var subview = subview as! UILabel
+                    subview.textColor = UIColor.whiteColor()
+                    subview.backgroundColor = ColorHelper.greenText
+                }
+            }
+        }
+        // end styling
+        
         if let plant = plant {
             var schedule = plant.schedule!.freq
             for day in schedule {
                 var amt = String(format: "%.1f", day.amount) + " oz"
-                activateButton(day.number, amt: amt)
+                var complete = day.complete
+                self.activateButton(day.number, amt: amt, complete: complete)
             }
-            var dayNum = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!.components(.CalendarUnitWeekday, fromDate: NSDate()).weekday - 1 
+            var dayNum = DateHelper.today()
             if let button = buttonFromKey(dayNum) {
                 button.backgroundColor = UIColor.yellowColor()
             }
         }
     }
     
-    func activateButton(day: Int, amt: String) {
+    func activateButton(day: Int, amt: String, complete: Bool) {
         var button = buttonFromKey(day)
         if let button = button {
             button.setTitle(amt, forState: .Normal)
-            button.backgroundColor = UIColor.blueColor()
-            button.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+            if !complete {
+                button.backgroundColor = UIColor.blueColor()
+                button.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+            }
         }
     }
     

@@ -12,6 +12,10 @@ class ChoicesViewController: UIViewController {
     
     var plant: Plant!
     var choice: String?
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

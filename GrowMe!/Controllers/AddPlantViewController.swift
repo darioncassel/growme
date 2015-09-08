@@ -29,16 +29,21 @@ class AddPlantViewController: UIViewController {
         if sender.titleLabel!!.text == "Ok" {
             if validateZipcode(zipcode.text) == 1 {
                 if let plant = plant {
+                    plant.useWeather = true
                     plant.zipcode = zipcode.text
                     WeatherHelper.getWeatherInfo(plant, zip: plant.zipcode) { weatherEffects in
                         plant.weatherEffects = weatherEffects
                     }
+                    plant.schedule = Schedule(size: plant.size, type: plant.type, light: plant.light, location: plant.location, firstDay: plant.firstDay, weatherEffects: plant.weatherEffects, completed: plant.completed)
                 }
                 self.performSegueWithIdentifier(self.restorationIdentifier, sender: self)
             } else {
                 notValid.hidden = false
             }
         } else if sender.titleLabel!!.text == "No thanks" {
+            if let plant = plant {
+                plant.schedule = Schedule(size: plant.size, type: plant.type, light: plant.light, location: plant.location, firstDay: plant.firstDay, weatherEffects: plant.weatherEffects, completed: plant.completed)
+            }
             self.performSegueWithIdentifier(self.restorationIdentifier, sender: self)
         }
     }
