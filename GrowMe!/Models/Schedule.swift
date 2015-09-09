@@ -11,7 +11,7 @@ import RealmSwift
 
 class Schedule: Object {
     
-    let sizeArray = ["Seed", "Sapling", "Medium", "Large"]
+    let sizeArray = ["Seed", "Small", "Medium", "Large"]
     let typeArray = ["Succulent", "Tree/Shrub", "Edible", "Flowering"]
     let lightArray = ["Shade", "Partial", "Mostly", "Full"]
     

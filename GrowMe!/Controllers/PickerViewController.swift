@@ -28,8 +28,10 @@ class PickerViewController: UIViewController {
     }
     
     @IBAction func nextStep(sender: UIButton!) {
-        // fix this
-        if false {
+        if plant?.location == "Indoors" {
+            if let plant = plant {
+                plant.schedule = Schedule(size: plant.size, type: plant.type, light: plant.light, location: plant.location, firstDay: plant.firstDay, weatherEffects: plant.weatherEffects, completed: plant.completed)
+            }
             self.performSegueWithIdentifier("goToEditPlant", sender: self)
         } else {
             self.performSegueWithIdentifier(self.restorationIdentifier!, sender: self)

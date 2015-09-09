@@ -24,7 +24,7 @@
         <!--Plants-->
         <scene sceneID="pWo-XR-ibf">
             <objects>
-                <viewController id="XsM-Ft-WW4" customClass="PlantsViewController" customModule="GrowMe_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XsM-Ft-WW4" customClass="PlantsViewController" customModule="GrowMe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xHz-ml-zCK"/>
                         <viewControllerLayoutGuide type="bottom" id="HRQ-Fc-GJb"/>
@@ -38,7 +38,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlantCell" id="59Q-9d-Eag" customClass="PlantsTableViewCell" customModule="GrowMe_" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlantCell" id="59Q-9d-Eag" customClass="PlantsTableViewCell" customModule="GrowMe" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="59Q-9d-Eag" id="Sqo-Dv-bbZ">
@@ -109,7 +109,7 @@
         <!--Indoors/Outdoors-->
         <scene sceneID="k5u-Gb-mBv">
             <objects>
-                <viewController restorationIdentifier="step3" title="Indoors/Outdoors" id="Yce-Wm-6Ww" customClass="ChoicesViewController" customModule="GrowMe_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="step3" title="Indoors/Outdoors" id="Yce-Wm-6Ww" customClass="ChoicesViewController" customModule="GrowMe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nbb-rF-vMg"/>
                         <viewControllerLayoutGuide type="bottom" id="Enc-VE-Adx"/>
@@ -172,7 +172,7 @@
         <!--Type of Plant-->
         <scene sceneID="rBt-h7-92s">
             <objects>
-                <viewController restorationIdentifier="step2" title="Type of Plant" id="Jqh-rJ-G7K" customClass="ChoicesViewController" customModule="GrowMe_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="step2" title="Type of Plant" id="Jqh-rJ-G7K" customClass="ChoicesViewController" customModule="GrowMe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Zbz-lB-mlN"/>
                         <viewControllerLayoutGuide type="bottom" id="jMI-Vs-HcI"/>
@@ -181,37 +181,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lkz-zL-11d">
-                                <rect key="frame" x="498" y="228" width="71" height="32"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <state key="normal" title="Flowering">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="nextStep:" destination="Jqh-rJ-G7K" eventType="touchUpInside" id="NLD-2L-WOC"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hLJ-Bg-5K7">
-                                <rect key="frame" x="46" y="228" width="51" height="30"/>
-                                <state key="normal" title="Edible">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hLJ-Bg-5K7">
+                                <rect key="frame" x="146" y="199.5" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="K7q-k1-StV"/>
+                                    <constraint firstAttribute="height" constant="150" id="b13-ff-CQy"/>
+                                </constraints>
+                                <inset key="titleEdgeInsets" minX="0.0" minY="130" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="Edible" backgroundImage="Edible">
+                                    <color key="titleColor" red="0.1019607843" green="0.73725490199999999" blue="0.61176470589999998" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="nextStep:" destination="Jqh-rJ-G7K" eventType="touchUpInside" id="wKZ-0y-EBI"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VOh-AU-ae9">
-                                <rect key="frame" x="493" y="426" width="76" height="30"/>
-                                <state key="normal" title="Succulent">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VOh-AU-ae9">
+                                <rect key="frame" x="304" y="359" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="hBH-DE-Lk1"/>
+                                    <constraint firstAttribute="width" constant="150" id="ho5-mE-aSH"/>
+                                </constraints>
+                                <inset key="titleEdgeInsets" minX="0.0" minY="130" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="Succulent" backgroundImage="Succulent">
+                                    <color key="titleColor" red="0.1019607843" green="0.73725490199999999" blue="0.61176470589999998" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="nextStep:" destination="Jqh-rJ-G7K" eventType="touchUpInside" id="8WV-1P-OfH"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ef9-lZ-hlH">
-                                <rect key="frame" x="46" y="429" width="77" height="30"/>
-                                <state key="normal" title="Tree/Shrub">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ef9-lZ-hlH">
+                                <rect key="frame" x="146" y="359" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="IIe-Pj-Zkn"/>
+                                    <constraint firstAttribute="height" constant="150" id="hha-Lf-XSP"/>
+                                </constraints>
+                                <inset key="titleEdgeInsets" minX="0.0" minY="130" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="Tree/Shrub" backgroundImage="TreeShrub">
+                                    <color key="titleColor" red="0.1019607843" green="0.73725490199999999" blue="0.61176470589999998" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -219,28 +227,40 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What type is it?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UTb-ON-0Tw">
-                                <rect key="frame" x="241" y="125" width="119" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="119" id="TxO-4X-j85"/>
-                                </constraints>
+                                <rect key="frame" x="241" y="155" width="119" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.1019607843" green="0.73725490199999999" blue="0.61176470589999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lkz-zL-11d">
+                                <rect key="frame" x="304" y="200" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="ft8-zl-ntf"/>
+                                    <constraint firstAttribute="width" constant="150" id="qg7-NJ-0iy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <inset key="titleEdgeInsets" minX="0.0" minY="130" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="Flowering" backgroundImage="Flowering">
+                                    <color key="titleColor" red="0.1019607843" green="0.73725490199999999" blue="0.61176470589999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextStep:" destination="Jqh-rJ-G7K" eventType="touchUpInside" id="NLD-2L-WOC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="lkz-zL-11d" secondAttribute="trailing" constant="15" id="68z-6l-1W2"/>
-                            <constraint firstItem="jMI-Vs-HcI" firstAttribute="top" secondItem="UTb-ON-0Tw" secondAttribute="bottom" constant="454" id="IOu-1v-pAF"/>
-                            <constraint firstItem="Ef9-lZ-hlH" firstAttribute="top" secondItem="lkz-zL-11d" secondAttribute="bottom" constant="169" id="dEX-hO-gem"/>
-                            <constraint firstItem="UTb-ON-0Tw" firstAttribute="top" secondItem="Zbz-lB-mlN" secondAttribute="bottom" constant="61" id="fzB-kX-qJ2"/>
-                            <constraint firstItem="Ef9-lZ-hlH" firstAttribute="leading" secondItem="gvc-5D-xAd" secondAttribute="leadingMargin" constant="30" id="hiG-cD-r9w"/>
-                            <constraint firstItem="VOh-AU-ae9" firstAttribute="top" secondItem="hLJ-Bg-5K7" secondAttribute="bottom" constant="168" id="o07-cz-9VZ"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="VOh-AU-ae9" secondAttribute="trailing" constant="15" id="p7E-vy-ogX"/>
-                            <constraint firstItem="hLJ-Bg-5K7" firstAttribute="top" secondItem="Zbz-lB-mlN" secondAttribute="bottom" constant="164" id="pl4-GR-tda"/>
-                            <constraint firstItem="hLJ-Bg-5K7" firstAttribute="leading" secondItem="gvc-5D-xAd" secondAttribute="leadingMargin" constant="30" id="t7D-au-su3"/>
-                            <constraint firstAttribute="centerX" secondItem="UTb-ON-0Tw" secondAttribute="centerX" id="twp-r5-e9F"/>
-                            <constraint firstItem="lkz-zL-11d" firstAttribute="top" secondItem="Zbz-lB-mlN" secondAttribute="bottom" constant="164" id="xV2-KO-9qA"/>
+                            <constraint firstItem="lkz-zL-11d" firstAttribute="trailing" secondItem="UTb-ON-0Tw" secondAttribute="trailing" constant="94" id="1N6-d7-8et"/>
+                            <constraint firstAttribute="centerX" secondItem="UTb-ON-0Tw" secondAttribute="centerX" id="1eR-Qd-bKF"/>
+                            <constraint firstItem="hLJ-Bg-5K7" firstAttribute="top" secondItem="UTb-ON-0Tw" secondAttribute="bottom" constant="24" id="2mr-dQ-0hX"/>
+                            <constraint firstItem="VOh-AU-ae9" firstAttribute="trailing" secondItem="UTb-ON-0Tw" secondAttribute="trailing" constant="94" id="ODq-aW-nG2"/>
+                            <constraint firstItem="hLJ-Bg-5K7" firstAttribute="leading" secondItem="UTb-ON-0Tw" secondAttribute="leading" constant="-95" id="Pps-fc-5Ad"/>
+                            <constraint firstItem="UTb-ON-0Tw" firstAttribute="leading" secondItem="Ef9-lZ-hlH" secondAttribute="leading" constant="95" id="dAW-M9-hR2"/>
+                            <constraint firstItem="VOh-AU-ae9" firstAttribute="top" secondItem="UTb-ON-0Tw" secondAttribute="bottom" constant="183.5" id="ddS-nd-ePq"/>
+                            <constraint firstItem="UTb-ON-0Tw" firstAttribute="top" secondItem="Zbz-lB-mlN" secondAttribute="bottom" constant="91" id="oJy-G6-241"/>
+                            <constraint firstItem="lkz-zL-11d" firstAttribute="top" secondItem="UTb-ON-0Tw" secondAttribute="bottom" constant="24" id="owt-G1-zY1"/>
+                            <constraint firstItem="Ef9-lZ-hlH" firstAttribute="top" secondItem="UTb-ON-0Tw" secondAttribute="bottom" constant="183.5" id="udU-Wx-ZSh"/>
                         </constraints>
                     </view>
                     <connections>
@@ -254,7 +274,7 @@
         <!--Size-->
         <scene sceneID="cbF-7Z-HrL">
             <objects>
-                <viewController restorationIdentifier="step1" title="Size" id="kGr-aP-kmb" customClass="ChoicesViewController" customModule="GrowMe_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="step1" title="Size" id="kGr-aP-kmb" customClass="ChoicesViewController" customModule="GrowMe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oQ6-h6-Y0Q"/>
                         <viewControllerLayoutGuide type="bottom" id="TYU-yP-Uul"/>
@@ -283,6 +303,7 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="exH-RK-krc"/>
                                     <constraint firstAttribute="width" constant="150" id="kiO-6t-D57"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <inset key="titleEdgeInsets" minX="0.0" minY="130" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Seed" backgroundImage="Seed">
                                     <color key="titleColor" red="0.10196078431372549" green="0.73725490196078436" blue="0.61176470588235299" alpha="1" colorSpace="calibratedRGB"/>
@@ -306,7 +327,7 @@
                                     <constraint firstAttribute="height" constant="150" id="vqd-gp-8zU"/>
                                 </constraints>
                                 <inset key="titleEdgeInsets" minX="0.0" minY="130" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="Sapling" backgroundImage="Sapling">
+                                <state key="normal" title="Small" backgroundImage="Small">
                                     <color key="titleColor" red="0.1019607843" green="0.73725490199999999" blue="0.61176470589999998" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -377,7 +398,7 @@
         <!--Last Watered-->
         <scene sceneID="3eP-Xa-0Aj">
             <objects>
-                <viewController restorationIdentifier="step5" title="Last Watered" id="emj-Fn-Djt" customClass="PickerViewController" customModule="GrowMe_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="step5" title="Last Watered" id="emj-Fn-Djt" customClass="PickerViewController" customModule="GrowMe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pGx-CC-4OH"/>
                         <viewControllerLayoutGuide type="bottom" id="G7q-a4-iRc"/>
@@ -432,7 +453,7 @@
         <!--Amount of Light-->
         <scene sceneID="Utk-JG-zmb">
             <objects>
-                <viewController restorationIdentifier="step4" title="Amount of Light" id="ViS-He-e4Q" customClass="ChoicesViewController" customModule="GrowMe_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="step4" title="Amount of Light" id="ViS-He-e4Q" customClass="ChoicesViewController" customModule="GrowMe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="P5U-P8-itq"/>
                         <viewControllerLayoutGuide type="bottom" id="eLa-hz-Bp1"/>
@@ -558,7 +579,7 @@
         <!--Edit Plant-->
         <scene sceneID="eaX-3E-jqI">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="9eh-c6-OMc" customClass="EditPlantViewController" customModule="GrowMe_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="9eh-c6-OMc" customClass="EditPlantViewController" customModule="GrowMe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="WT5-lD-tml"/>
                         <viewControllerLayoutGuide type="bottom" id="J3q-O7-bhs"/>
@@ -570,13 +591,13 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xa8-U4-KgF">
                                 <rect key="frame" x="0.0" y="64" width="600" height="636"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hmZ-6l-DBi">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Type:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hmZ-6l-DBi">
                                         <rect key="frame" x="24" y="310" width="41" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notifications:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jHM-hF-ee0">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Notifications:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jHM-hF-ee0">
                                         <rect key="frame" x="22" y="541" width="101" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -595,7 +616,7 @@
                                             </mask>
                                         </variation>
                                     </textField>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Iwb-pQ-Vrs">
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Iwb-pQ-Vrs">
                                         <rect key="frame" x="382" y="303" width="210" height="29"/>
                                         <segments>
                                             <segment title="Edible"/>
@@ -604,7 +625,7 @@
                                             <segment title="Succulent"/>
                                         </segments>
                                     </segmentedControl>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="iRa-Rr-2gb">
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="iRa-Rr-2gb">
                                         <rect key="frame" x="382" y="455" width="210" height="29"/>
                                         <segments>
                                             <segment title="Full"/>
@@ -613,13 +634,14 @@
                                             <segment title="Shade"/>
                                         </segments>
                                     </segmentedControl>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UK3-K7-Y81">
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UK3-K7-Y81">
                                         <rect key="frame" x="463" y="531" width="51" height="31"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="49" id="LWt-z6-59Z"/>
                                         </constraints>
+                                        <color key="onTintColor" red="0.1019607843" green="0.73725490199999999" blue="0.61176470589999998" alpha="1" colorSpace="calibratedRGB"/>
                                     </switch>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunlight: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JP9-Ix-yS7">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Sunlight: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JP9-Ix-yS7">
                                         <rect key="frame" x="23" y="462" width="73" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="73" id="qfK-N9-LVW"/>
@@ -628,13 +650,13 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2cK-nt-zeP">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Location:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2cK-nt-zeP">
                                         <rect key="frame" x="22" y="385" width="74" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="CoA-tU-bJY">
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="CoA-tU-bJY">
                                         <rect key="frame" x="426" y="378" width="123" height="29"/>
                                         <segments>
                                             <segment title="Indoors"/>
@@ -650,7 +672,7 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Size:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4pp-dC-n6c">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Size:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4pp-dC-n6c">
                                         <rect key="frame" x="24" y="233" width="42" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="42" id="25M-rU-zgQ"/>
@@ -659,13 +681,16 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Ipl-z8-Yn2">
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Ipl-z8-Yn2">
                                         <rect key="frame" x="382" y="226" width="210" height="29"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="SQI-k3-dtq"/>
+                                        </constraints>
                                         <segments>
-                                            <segment title="Seed"/>
-                                            <segment title="Sapling"/>
-                                            <segment title="Medium"/>
-                                            <segment title="Large"/>
+                                            <segment title="" image="Seed" width="50"/>
+                                            <segment title="" image="Sapling"/>
+                                            <segment title="" image="Medium"/>
+                                            <segment title="" image="Large"/>
                                         </segments>
                                     </segmentedControl>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KK1-u5-c4B">
@@ -810,7 +835,7 @@
         <!--Add a Plant-->
         <scene sceneID="RAa-QY-TaH">
             <objects>
-                <viewController restorationIdentifier="step6" id="nYn-WB-BdM" customClass="AddPlantViewController" customModule="GrowMe_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="step6" id="nYn-WB-BdM" customClass="AddPlantViewController" customModule="GrowMe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2U4-1n-4Cy"/>
                         <viewControllerLayoutGuide type="bottom" id="pXR-2o-yRg"/>
@@ -913,7 +938,7 @@
         <!--Schedule View Controller-->
         <scene sceneID="eL1-eO-7EU">
             <objects>
-                <viewController id="hOn-q4-lwK" customClass="ScheduleViewController" customModule="GrowMe_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="hOn-q4-lwK" customClass="ScheduleViewController" customModule="GrowMe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0VF-gi-pgj"/>
                         <viewControllerLayoutGuide type="bottom" id="k7e-3C-9ag"/>
@@ -1188,10 +1213,15 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Edible" width="120" height="120"/>
+        <image name="Flowering" width="120" height="120"/>
         <image name="Large" width="120" height="120"/>
         <image name="Medium" width="120" height="120"/>
         <image name="Sapling" width="120" height="120"/>
         <image name="Seed" width="120" height="120"/>
+        <image name="Small" width="120" height="120"/>
+        <image name="Succulent" width="120" height="120"/>
+        <image name="TreeShrub" width="120" height="120"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="eXG-s3-Hhh"/>

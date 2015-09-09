@@ -11,7 +11,7 @@ import RealmSwift
 
 class EditPlantViewController: UIViewController {
     
-    let sizeArr = ["Seed", "Sapling", "Medium", "Large"]
+    let sizeArr = ["Seed", "Small", "Medium", "Large"]
     let typeArr = ["Edible", "Flowering", "Tree/Shrub", "Succulent"]
     let locArr = ["Indoors", "Outdoors"]
     let lightArr = ["Full", "Mostly", "Partial", "Shade"]
