@@ -49,21 +49,42 @@ class Plant: Object {
         return nil
     }
     
-    func dayComplete(dayNum: Int, callback: (Bool) -> ()) {
+    func dayToggle(dayNum: Int, callback: (Bool) -> ()) {
         if let schedule = schedule {
             for day in schedule.freq {
                 if dayNum == day.number {
-                    dispatch_async(dispatch_get_main_queue()) {
-                        autoreleasepool {
-                            let realm = Realm()
-                            var thisDay = Day(number: dayNum, complete: true, amount: 0.0)
-                            realm.write() {
-                                day.complete = true
-                                self.completed.append(thisDay)
-                                realm.add(self)
+                    if day.complete {
+                        dispatch_async(dispatch_get_main_queue()) {
+                            autoreleasepool {
+                                let realm = Realm()
+                                realm.write() {
+                                    day.complete = false
+                                    for x in self.completed {
+                                        if x.number == dayNum {
+                                            var index = self.completed.indexOf(x)
+                                            if let index = index {
+                                                self.completed.removeAtIndex(index)
+                                            }
+                                        }
+                                    }
+                                    realm.add(self)
+                                }
                             }
+                            callback(day.complete)
                         }
-                        callback(day.complete)
+                    } else {
+                        dispatch_async(dispatch_get_main_queue()) {
+                            autoreleasepool {
+                                let realm = Realm()
+                                var thisDay = Day(number: dayNum, complete: true, amount: 0.0)
+                                realm.write() {
+                                    day.complete = true
+                                    self.completed.append(thisDay)
+                                    realm.add(self)
+                                }
+                            }
+                            callback(day.complete)
+                        }
                     }
                 }
             }

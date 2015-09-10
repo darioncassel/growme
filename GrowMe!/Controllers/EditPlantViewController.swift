@@ -14,7 +14,7 @@ class EditPlantViewController: UIViewController {
     let sizeArr = ["Seed", "Small", "Medium", "Large"]
     let typeArr = ["Edible", "Flowering", "Tree/Shrub", "Succulent"]
     let locArr = ["Indoors", "Outdoors"]
-    let lightArr = ["Full", "Mostly", "Partial", "Shade"]
+    let lightArr = ["Full", "Mostly", "Little", "Shade"]
     
     var plant: Plant?
 
@@ -24,6 +24,7 @@ class EditPlantViewController: UIViewController {
     @IBOutlet weak var location: UISegmentedControl!
     @IBOutlet weak var light: UISegmentedControl!
     @IBOutlet weak var notify: UISwitch!
+    @IBOutlet weak var zipcode: UITextField!
     @IBOutlet weak var leftButton: UIBarButtonItem!
     @IBOutlet weak var scheduleContainer: UIView!
     
@@ -52,6 +53,7 @@ class EditPlantViewController: UIViewController {
             segmentSolver(plant.type, array: typeArr, segment: type)
             segmentSolver(plant.location, array: locArr, segment: location)
             segmentSolver(plant.light, array: lightArr, segment: light)
+            zipcode.text = plant.zipcode
             notify.on = plant.notify
             
             let scheduleCont = self.childViewControllers[0] as! ScheduleViewController

@@ -20,6 +20,23 @@ class ScheduleViewController: UIViewController {
     @IBOutlet weak var fr: UIButton!
     @IBOutlet weak var sa: UIButton!
     
+    @IBAction func dayPressed(sender: AnyObject) {
+        if let plant = plant {
+            var day = keyFromButton(sender as! UIButton)
+            if let day = day {
+                plant.dayToggle(day) { complete in
+                    if !complete {
+                        var incomplete = UIImage(named: "Incomplete")!
+                        sender.setBackgroundImage(incomplete, forState: .Normal)
+                    } else {
+                        var complete = UIImage(named: "Complete")!
+                        sender.setBackgroundImage(complete, forState: .Normal)
+                    }
+                }
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -51,10 +68,6 @@ class ScheduleViewController: UIViewController {
                 var complete = day.complete
                 self.activateButton(day.number, amt: amt, complete: complete)
             }
-            var dayNum = DateHelper.today()
-            if let button = buttonFromKey(dayNum) {
-                button.backgroundColor = UIColor.yellowColor()
-            }
         }
     }
     
@@ -62,9 +75,14 @@ class ScheduleViewController: UIViewController {
         var button = buttonFromKey(day)
         if let button = button {
             button.setTitle(amt, forState: .Normal)
+            button.titleLabel?.lineBreakMode = NSLineBreakMode.ByWordWrapping
+            button.titleLabel?.textAlignment = NSTextAlignment.Center
             if !complete {
-                button.backgroundColor = UIColor.blueColor()
-                button.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+                var incomplete = UIImage(named: "Incomplete")!
+                button.setBackgroundImage(incomplete, forState: .Normal)
+            } else {
+                var complete = UIImage(named: "Complete")!
+                button.setBackgroundImage(complete, forState: .Normal)
             }
         }
     }
@@ -91,6 +109,30 @@ class ScheduleViewController: UIViewController {
             println("error")
         }
         return button
+    }
+    
+    func keyFromButton(button: UIButton) -> Int? {
+        var num: Int!
+        switch button {
+        case su:
+            num = 0
+        case mo:
+            num = 1
+        case tu:
+            num = 2
+        case we:
+            num = 3
+        case th:
+            num = 4
+        case fr:
+            num = 5
+        case sa:
+            num = 6
+        default:
+            num = nil
+            println("error")
+        }
+        return num
     }
 
     override func didReceiveMemoryWarning() {

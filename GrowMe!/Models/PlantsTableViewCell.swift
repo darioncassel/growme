@@ -21,15 +21,12 @@ class PlantsTableViewCell: UITableViewCell {
                 var today = plant.getDay(todayNum)
                 if let today = today {
                     if today.0 {
-                        complete.backgroundColor = UIColor.clearColor()
+                        var dayComplete = UIImage(named: "Complete")!
+                        complete.setBackgroundImage(dayComplete, forState: .Normal)
                     } else {
-                        complete.backgroundColor = UIColor.blueColor()
+                        var incomplete = UIImage(named: "Incomplete")!
+                        complete.setBackgroundImage(incomplete, forState: .Normal)
                     }
-                    var amt = String(format: "%.1f", today.1) + " oz"
-                    complete.setTitle(amt, forState: .Normal)
-                } else {
-                    complete.backgroundColor = UIColor.clearColor()
-                    complete.setTitle("\\|/", forState: .Normal)
                 }
             }
         }
@@ -39,9 +36,13 @@ class PlantsTableViewCell: UITableViewCell {
         var sender = sender as! UIButton
         if let plant = plant {
             var todayNum = DateHelper.today()
-            plant.dayComplete(todayNum) { complete in
+            plant.dayToggle(todayNum) { complete in
                 if complete {
-                    sender.backgroundColor = UIColor.clearColor()
+                    var dayComplete = UIImage(named: "Complete")!
+                    sender.setBackgroundImage(dayComplete, forState: .Normal)
+                } else {
+                    var incomplete = UIImage(named: "Incomplete")!
+                    sender.setBackgroundImage(incomplete, forState: .Normal)
                 }
             }
         }
