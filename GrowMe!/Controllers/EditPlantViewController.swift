@@ -30,6 +30,16 @@ class EditPlantViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name:UIKeyboardWillShowNotification, object: nil);
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name:UIKeyboardWillHideNotification, object: nil);
+    }
+    
+    func keyboardWillShow(sender: NSNotification) {
+        self.view.frame.origin.y -= 215
+    }
+    
+    func keyboardWillHide(sender: NSNotification) {
+        self.view.frame.origin.y += 215
     }
     
     override func viewWillAppear(animated: Bool) {

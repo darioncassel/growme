@@ -894,9 +894,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="xa8-U4-KgF" secondAttribute="trailing" id="9zQ-f5-3vh"/>
-                            <constraint firstItem="xa8-U4-KgF" firstAttribute="top" secondItem="WT5-lD-tml" secondAttribute="bottom" id="BtG-re-ETt"/>
                             <constraint firstItem="xa8-U4-KgF" firstAttribute="leading" secondItem="NTY-bC-20o" secondAttribute="leading" id="LUO-oC-ZBL"/>
                             <constraint firstAttribute="bottomMargin" secondItem="xa8-U4-KgF" secondAttribute="bottom" constant="-64" id="UnU-Dg-Dvb"/>
+                            <constraint firstItem="xa8-U4-KgF" firstAttribute="top" secondItem="WT5-lD-tml" secondAttribute="bottom" id="nu2-pH-9YZ"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -994,7 +994,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UXo-EE-KLb">
-                                <rect key="frame" x="254" y="443" width="89" height="32"/>
+                                <rect key="frame" x="254" y="404" width="89" height="32"/>
                                 <state key="normal" title="No thanks">
                                     <color key="titleColor" red="0.1019607843" green="0.73725490199999999" blue="0.61176470589999998" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -1013,7 +1013,7 @@
                             <constraint firstItem="se6-lp-iQY" firstAttribute="leading" secondItem="S60-S5-LP3" secondAttribute="trailing" constant="16" id="IA5-KG-wES"/>
                             <constraint firstItem="9BT-o6-BXT" firstAttribute="top" secondItem="2U4-1n-4Cy" secondAttribute="bottom" constant="91" id="LnW-cP-LIg"/>
                             <constraint firstAttribute="centerX" secondItem="S60-S5-LP3" secondAttribute="centerX" constant="1.5" id="O6Y-oj-iEm"/>
-                            <constraint firstItem="UXo-EE-KLb" firstAttribute="top" secondItem="S60-S5-LP3" secondAttribute="bottom" constant="118" id="bUj-SJ-FYI"/>
+                            <constraint firstItem="UXo-EE-KLb" firstAttribute="top" secondItem="S60-S5-LP3" secondAttribute="bottom" constant="90" id="bUj-SJ-FYI"/>
                             <constraint firstItem="bLK-gX-8Pc" firstAttribute="centerX" secondItem="S60-S5-LP3" secondAttribute="centerX" constant="1.5" id="ene-Uc-Vei"/>
                             <constraint firstItem="S60-S5-LP3" firstAttribute="top" secondItem="9BT-o6-BXT" secondAttribute="bottom" constant="100" id="lrN-6L-DPq"/>
                             <constraint firstAttribute="centerX" secondItem="9BT-o6-BXT" secondAttribute="centerX" constant="-0.5" id="rgV-dU-sDM"/>
