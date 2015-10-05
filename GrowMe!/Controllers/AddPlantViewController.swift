@@ -49,8 +49,14 @@ class AddPlantViewController: UIViewController {
     }
     
     func validateZipcode(zip: String) -> Int {
-        let pattern =  NSRegularExpression(pattern: "(^[0-9]{5}(-[0-9]{4})?$)", options: NSRegularExpressionOptions.allZeros, error: NSErrorPointer())
-        return pattern!.numberOfMatchesInString(zip, options: NSMatchingOptions.allZeros, range: NSMakeRange(0, count(zip)))
+        let pattern: NSRegularExpression?
+        do {
+            pattern = try NSRegularExpression(pattern: "(^[0-9]{5}(-[0-9]{4})?$)", options: NSRegularExpressionOptions())
+        } catch let error as NSError {
+            NSErrorPointer().memory = error
+            pattern = nil
+        }
+        return pattern!.numberOfMatchesInString(zip, options: NSMatchingOptions(), range: NSMakeRange(0, zip.characters.count))
     }
     
         

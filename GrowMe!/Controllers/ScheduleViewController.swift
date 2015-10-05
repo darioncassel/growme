@@ -22,14 +22,14 @@ class ScheduleViewController: UIViewController {
     
     @IBAction func dayPressed(sender: AnyObject) {
         if let plant = plant {
-            var day = keyFromButton(sender as! UIButton)
+            let day = keyFromButton(sender as! UIButton)
             if let day = day {
                 plant.dayToggle(day) { complete in
                     if !complete {
-                        var incomplete = UIImage(named: "Incomplete")!
+                        let incomplete = UIImage(named: "Incomplete")!
                         sender.setBackgroundImage(incomplete, forState: .Normal)
                     } else {
-                        var complete = UIImage(named: "Complete")!
+                        let complete = UIImage(named: "Complete")!
                         sender.setBackgroundImage(complete, forState: .Normal)
                     }
                 }
@@ -46,7 +46,7 @@ class ScheduleViewController: UIViewController {
         
         // styling
         for view in self.view.subviews[0].subviews {
-            var view = view as! UIView
+            var view = view 
             view.backgroundColor = UIColor.whiteColor()
             view.layer.borderWidth = 0.7
             view.layer.cornerRadius = 2
@@ -72,16 +72,16 @@ class ScheduleViewController: UIViewController {
     }
     
     func activateButton(day: Int, amt: String, complete: Bool) {
-        var button = buttonFromKey(day)
+        let button = buttonFromKey(day)
         if let button = button {
             button.setTitle(amt, forState: .Normal)
             button.titleLabel?.lineBreakMode = NSLineBreakMode.ByWordWrapping
             button.titleLabel?.textAlignment = NSTextAlignment.Center
             if !complete {
-                var incomplete = UIImage(named: "Incomplete")!
+                let incomplete = UIImage(named: "Incomplete")!
                 button.setBackgroundImage(incomplete, forState: .Normal)
             } else {
-                var complete = UIImage(named: "Complete")!
+                let complete = UIImage(named: "Complete")!
                 button.setBackgroundImage(complete, forState: .Normal)
             }
         }
@@ -106,7 +106,7 @@ class ScheduleViewController: UIViewController {
             button = sa
         default:
             button = nil
-            println("error")
+            print("error")
         }
         return button
     }
@@ -130,7 +130,7 @@ class ScheduleViewController: UIViewController {
             num = 6
         default:
             num = nil
-            println("error")
+            print("error")
         }
         return num
     }

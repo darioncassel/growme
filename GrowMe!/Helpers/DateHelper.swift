@@ -11,7 +11,7 @@ import Foundation
 class DateHelper {
     
     static func today() -> Int {
-        return NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!.components(.CalendarUnitWeekday, fromDate: NSDate()).weekday - 1
+        return NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!.components(.Weekday, fromDate: NSDate()).weekday - 1
     }
     
 }

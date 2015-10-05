@@ -42,9 +42,9 @@ class PickerViewController: UIViewController {
     // MARK: - Navigation
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        var currentDate = NSDateFormatter.localizedStringFromDate(NSDate(), dateStyle: .MediumStyle, timeStyle: .LongStyle)
-        var day = DateHelper.today()
-        var firstDay = abs((day - choice) % 6)
+        let currentDate = NSDateFormatter.localizedStringFromDate(NSDate(), dateStyle: .MediumStyle, timeStyle: .LongStyle)
+        let day = DateHelper.today()
+        let firstDay = abs((day - choice) % 6)
         if let plant = plant {
             plant.firstDay = firstDay
             plant.created = currentDate

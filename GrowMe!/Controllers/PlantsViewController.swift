@@ -38,7 +38,7 @@ class PlantsViewController: UIViewController {
         let realm = Realm()
         plants = realm.objects(Plant).sorted("created", ascending: false)
         var notifications = UIApplication.sharedApplication().scheduledLocalNotifications as! [UILocalNotification]
-        println(notifications)
+        print(notifications)
         for notification in notifications {
             UIApplication.sharedApplication().cancelLocalNotification(notification)
         }
@@ -62,7 +62,7 @@ class PlantsViewController: UIViewController {
             }
         }
         if count > 0 {
-            var today = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!.components(.CalendarUnitDay, fromDate: NSDate())
+            var today = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!.components(.Day, fromDate: NSDate())
             today.day = today.day + 1
             var notification = UILocalNotification()
             notification.fireDate = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)?.dateFromComponents(today)

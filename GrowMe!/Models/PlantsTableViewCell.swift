@@ -17,14 +17,14 @@ class PlantsTableViewCell: UITableViewCell {
         didSet {
             if let plant = plant, plantCellTitle = plantCellTitle {
                 plantCellTitle.text = plant.name
-                var todayNum = DateHelper.today()
-                var today = plant.getDay(todayNum)
+                let todayNum = DateHelper.today()
+                let today = plant.getDay(todayNum)
                 if let today = today {
                     if today.0 {
-                        var dayComplete = UIImage(named: "Complete")!
+                        let dayComplete = UIImage(named: "Complete")!
                         complete.setBackgroundImage(dayComplete, forState: .Normal)
                     } else {
-                        var incomplete = UIImage(named: "Incomplete")!
+                        let incomplete = UIImage(named: "Incomplete")!
                         complete.setBackgroundImage(incomplete, forState: .Normal)
                     }
                 }
@@ -33,15 +33,15 @@ class PlantsTableViewCell: UITableViewCell {
     }
     
     @IBAction func completePress(sender: AnyObject) {
-        var sender = sender as! UIButton
+        let sender = sender as! UIButton
         if let plant = plant {
-            var todayNum = DateHelper.today()
+            let todayNum = DateHelper.today()
             plant.dayToggle(todayNum) { complete in
                 if complete {
-                    var dayComplete = UIImage(named: "Complete")!
+                    let dayComplete = UIImage(named: "Complete")!
                     sender.setBackgroundImage(dayComplete, forState: .Normal)
                 } else {
-                    var incomplete = UIImage(named: "Incomplete")!
+                    let incomplete = UIImage(named: "Incomplete")!
                     sender.setBackgroundImage(incomplete, forState: .Normal)
                 }
             }

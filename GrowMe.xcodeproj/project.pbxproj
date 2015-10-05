@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		46D7C4E95E9C4792926AE901 /* Pods_GrowMeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A4B4088D530C84B35CA0C14 /* Pods_GrowMeTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		E8050443172E37969F75AF93 /* Pods_GrowMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FCDD176C8776F910C667782 /* Pods_GrowMe.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		FC0625681B8E05A600EA5E95 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0625671B8E05A600EA5E95 /* Day.swift */; };
 		FC06256A1B8E06B100EA5E95 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0625691B8E06B100EA5E95 /* Schedule.swift */; };
 		FC15BA2C1B9A566300D82242 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC15BA2B1B9A566300D82242 /* DateHelper.swift */; };
@@ -44,6 +46,8 @@
 		361D6B8525D02E4D6242F05C /* Pods-GrowMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GrowMe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GrowMe/Pods-GrowMe.debug.xcconfig"; sourceTree = "<group>"; };
 		542E98A448AC7F7B9B80CB7B /* Pods-GrowMe!Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GrowMe!Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GrowMe!Tests/Pods-GrowMe!Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		717D47E8A0EC807A5FE84989 /* Pods-GrowMe!.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GrowMe!.release.xcconfig"; path = "Pods/Target Support Files/Pods-GrowMe!/Pods-GrowMe!.release.xcconfig"; sourceTree = "<group>"; };
+		7A4B4088D530C84B35CA0C14 /* Pods_GrowMeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GrowMeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FCDD176C8776F910C667782 /* Pods_GrowMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GrowMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		85B0C75A2B7CFC12C3BFF43C /* Pods-GrowMeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GrowMeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GrowMeTests/Pods-GrowMeTests.release.xcconfig"; sourceTree = "<group>"; };
 		BD5B0777AA0713AE80C6EF86 /* Pods-GrowMeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GrowMeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GrowMeTests/Pods-GrowMeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E176E31678BB7AD784ADE542 /* Pods-GrowMe!.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GrowMe!.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GrowMe!/Pods-GrowMe!.debug.xcconfig"; sourceTree = "<group>"; };
@@ -79,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8050443172E37969F75AF93 /* Pods_GrowMe.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46D7C4E95E9C4792926AE901 /* Pods_GrowMeTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,6 +116,8 @@
 		5745B72A6555617EA4A25DC5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7FCDD176C8776F910C667782 /* Pods_GrowMe.framework */,
+				7A4B4088D530C84B35CA0C14 /* Pods_GrowMeTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -269,6 +277,7 @@
 		FC6E8B8B1B781DD6008F4FDA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0700;
 				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = "Darion Cassel";

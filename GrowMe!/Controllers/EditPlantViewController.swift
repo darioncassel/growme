@@ -39,7 +39,7 @@ class EditPlantViewController: UIViewController {
         self.view.backgroundColor = UIColor.whiteColor()
         for view in self.view.subviews[0].subviews {
             if view.isKindOfClass(UILabel) {
-                var view = view as! UILabel
+                let view = view as! UILabel
                 view.textColor = ColorHelper.greenText
             }
         }
