@@ -38,6 +38,7 @@ class PlantsViewController: UIViewController {
         let realm = Realm()
         plants = realm.objects(Plant).sorted("created", ascending: false)
         var notifications = UIApplication.sharedApplication().scheduledLocalNotifications as! [UILocalNotification]
+        println(notifications)
         for notification in notifications {
             UIApplication.sharedApplication().cancelLocalNotification(notification)
         }

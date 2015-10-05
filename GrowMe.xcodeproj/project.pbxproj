@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		450CCDB98F1CED1571C9CEEA /* Pods_GrowMe_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F64A22CB6151FBE983C328F /* Pods_GrowMe_.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		5AC3FFE7827CD95837C39521 /* Pods_GrowMe_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A3DA4DABCED0F53133655EC /* Pods_GrowMe_Tests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		FC0625681B8E05A600EA5E95 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0625671B8E05A600EA5E95 /* Day.swift */; };
 		FC06256A1B8E06B100EA5E95 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0625691B8E06B100EA5E95 /* Schedule.swift */; };
 		FC15BA2C1B9A566300D82242 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC15BA2B1B9A566300D82242 /* DateHelper.swift */; };
@@ -42,10 +40,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2626D4A0002FD3A13C756DAE /* Pods-GrowMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GrowMe.release.xcconfig"; path = "Pods/Target Support Files/Pods-GrowMe/Pods-GrowMe.release.xcconfig"; sourceTree = "<group>"; };
+		361D6B8525D02E4D6242F05C /* Pods-GrowMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GrowMe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GrowMe/Pods-GrowMe.debug.xcconfig"; sourceTree = "<group>"; };
 		542E98A448AC7F7B9B80CB7B /* Pods-GrowMe!Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GrowMe!Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GrowMe!Tests/Pods-GrowMe!Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		717D47E8A0EC807A5FE84989 /* Pods-GrowMe!.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GrowMe!.release.xcconfig"; path = "Pods/Target Support Files/Pods-GrowMe!/Pods-GrowMe!.release.xcconfig"; sourceTree = "<group>"; };
-		7F64A22CB6151FBE983C328F /* Pods_GrowMe_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GrowMe_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9A3DA4DABCED0F53133655EC /* Pods_GrowMe_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GrowMe_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		85B0C75A2B7CFC12C3BFF43C /* Pods-GrowMeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GrowMeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GrowMeTests/Pods-GrowMeTests.release.xcconfig"; sourceTree = "<group>"; };
+		BD5B0777AA0713AE80C6EF86 /* Pods-GrowMeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GrowMeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GrowMeTests/Pods-GrowMeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E176E31678BB7AD784ADE542 /* Pods-GrowMe!.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GrowMe!.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GrowMe!/Pods-GrowMe!.debug.xcconfig"; sourceTree = "<group>"; };
 		E49D5458802AA0C00D51DA25 /* Pods-GrowMe!Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GrowMe!Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GrowMe!Tests/Pods-GrowMe!Tests.release.xcconfig"; sourceTree = "<group>"; };
 		FC0625671B8E05A600EA5E95 /* Day.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
@@ -79,7 +79,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				450CCDB98F1CED1571C9CEEA /* Pods_GrowMe_.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,7 +86,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5AC3FFE7827CD95837C39521 /* Pods_GrowMe_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,6 +99,10 @@
 				717D47E8A0EC807A5FE84989 /* Pods-GrowMe!.release.xcconfig */,
 				542E98A448AC7F7B9B80CB7B /* Pods-GrowMe!Tests.debug.xcconfig */,
 				E49D5458802AA0C00D51DA25 /* Pods-GrowMe!Tests.release.xcconfig */,
+				361D6B8525D02E4D6242F05C /* Pods-GrowMe.debug.xcconfig */,
+				2626D4A0002FD3A13C756DAE /* Pods-GrowMe.release.xcconfig */,
+				BD5B0777AA0713AE80C6EF86 /* Pods-GrowMeTests.debug.xcconfig */,
+				85B0C75A2B7CFC12C3BFF43C /* Pods-GrowMeTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -108,8 +110,6 @@
 		5745B72A6555617EA4A25DC5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7F64A22CB6151FBE983C328F /* Pods_GrowMe_.framework */,
-				9A3DA4DABCED0F53133655EC /* Pods_GrowMe_Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -269,6 +269,7 @@
 		FC6E8B8B1B781DD6008F4FDA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = "Darion Cassel";
 				TargetAttributes = {
@@ -334,7 +335,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GrowMe!Tests/Pods-GrowMe!Tests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GrowMeTests/Pods-GrowMeTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		1D6423747862B81FF0361682 /* Check Pods Manifest.lock */ = {
@@ -364,7 +365,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GrowMe!Tests/Pods-GrowMe!Tests-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GrowMeTests/Pods-GrowMeTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		709CD654A074E2DE3EBA7DA7 /* Copy Pods Resources */ = {
@@ -379,7 +380,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GrowMe!/Pods-GrowMe!-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GrowMe/Pods-GrowMe-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		9932AE9936CA8E9953820D22 /* Embed Pods Frameworks */ = {
@@ -394,7 +395,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GrowMe!/Pods-GrowMe!-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GrowMe/Pods-GrowMe-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DE0F73C835C73FBFDECC00A7 /* Check Pods Manifest.lock */ = {
@@ -558,7 +559,7 @@
 		};
 		FC6E8BB31B781DD6008F4FDA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E176E31678BB7AD784ADE542 /* Pods-GrowMe!.debug.xcconfig */;
+			baseConfigurationReference = 361D6B8525D02E4D6242F05C /* Pods-GrowMe.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "GrowMe!/Info.plist";
@@ -569,7 +570,7 @@
 		};
 		FC6E8BB41B781DD6008F4FDA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 717D47E8A0EC807A5FE84989 /* Pods-GrowMe!.release.xcconfig */;
+			baseConfigurationReference = 2626D4A0002FD3A13C756DAE /* Pods-GrowMe.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "GrowMe!/Info.plist";
@@ -580,9 +581,8 @@
 		};
 		FC6E8BB61B781DD6008F4FDA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 542E98A448AC7F7B9B80CB7B /* Pods-GrowMe!Tests.debug.xcconfig */;
+			baseConfigurationReference = BD5B0777AA0713AE80C6EF86 /* Pods-GrowMeTests.debug.xcconfig */;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -594,15 +594,14 @@
 				INFOPLIST_FILE = "GrowMe!Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = GrowMeTests;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GrowMe!.app/GrowMe!";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GrowMe.app/GrowMe";
 			};
 			name = Debug;
 		};
 		FC6E8BB71B781DD6008F4FDA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E49D5458802AA0C00D51DA25 /* Pods-GrowMe!Tests.release.xcconfig */;
+			baseConfigurationReference = 85B0C75A2B7CFC12C3BFF43C /* Pods-GrowMeTests.release.xcconfig */;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -610,7 +609,7 @@
 				INFOPLIST_FILE = "GrowMe!Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = GrowMeTests;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GrowMe!.app/GrowMe!";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GrowMe.app/GrowMe";
 			};
 			name = Release;
 		};
