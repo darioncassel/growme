@@ -77,9 +77,9 @@ class EditPlantViewController: UIViewController {
     @IBAction func savePressed(sender: UIBarButtonItem) {
         name.endEditing(true)
         if let plant = plant {
-            let realm = Realm()
+            let realm = try! Realm()
             realm.write() {
-                plant.name = self.name.text
+                plant.name = self.name.text!
                 plant.size = self.sizeArr[self.size.selectedSegmentIndex]
                 plant.type = self.typeArr[self.type.selectedSegmentIndex]
                 plant.location = self.locArr[self.location.selectedSegmentIndex]

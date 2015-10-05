@@ -46,14 +46,14 @@ class ScheduleViewController: UIViewController {
         
         // styling
         for view in self.view.subviews[0].subviews {
-            var view = view 
+            let view = view
             view.backgroundColor = UIColor.whiteColor()
             view.layer.borderWidth = 0.7
             view.layer.cornerRadius = 2
             view.layer.borderColor = ColorHelper.greenText.CGColor
             for subview in view.subviews {
                 if subview.isKindOfClass(UILabel) {
-                    var subview = subview as! UILabel
+                    let subview = subview as! UILabel
                     subview.textColor = UIColor.whiteColor()
                     subview.backgroundColor = ColorHelper.greenText
                 }
@@ -62,10 +62,10 @@ class ScheduleViewController: UIViewController {
         // end styling
         
         if let plant = plant {
-            var schedule = plant.schedule!.freq
+            let schedule = plant.schedule!.freq
             for day in schedule {
-                var amt = String(format: "%.1f", day.amount) + " oz"
-                var complete = day.complete
+                let amt = String(format: "%.1f", day.amount) + " oz"
+                let complete = day.complete
                 self.activateButton(day.number, amt: amt, complete: complete)
             }
         }

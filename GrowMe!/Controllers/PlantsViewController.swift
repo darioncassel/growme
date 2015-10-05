@@ -28,24 +28,24 @@ class PlantsViewController: UIViewController {
         super.viewWillAppear(animated)
         
         // styling
-        var navBar = self.navigationController?.navigationBar
+        let navBar = self.navigationController?.navigationBar
         navBar?.barStyle = UIBarStyle.Black
         navBar?.barTintColor = ColorHelper.greenBar
         navBar?.tintColor = ColorHelper.grayText
         tableView.rowHeight = 60
         // end styling
         
-        let realm = Realm()
+        let realm = try! Realm()
         plants = realm.objects(Plant).sorted("created", ascending: false)
-        var notifications = UIApplication.sharedApplication().scheduledLocalNotifications as! [UILocalNotification]
+        let notifications = UIApplication.sharedApplication().scheduledLocalNotifications as [UILocalNotification]!
         print(notifications)
         for notification in notifications {
             UIApplication.sharedApplication().cancelLocalNotification(notification)
         }
-        var tomorrow = DateHelper.today() + 1
+        let tomorrow = DateHelper.today() + 1
         var count = 0
         for plant in plants {
-            var days = plant.schedule?.freq
+            let days = plant.schedule?.freq
             if let days = days {
                 var contains = false
                 for day in days {
@@ -62,9 +62,9 @@ class PlantsViewController: UIViewController {
             }
         }
         if count > 0 {
-            var today = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!.components(.Day, fromDate: NSDate())
+            let today = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!.components(.Day, fromDate: NSDate())
             today.day = today.day + 1
-            var notification = UILocalNotification()
+            let notification = UILocalNotification()
             notification.fireDate = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)?.dateFromComponents(today)
             if count == 1 {
                 notification.alertBody = "1 plant needs water!"
@@ -86,7 +86,7 @@ class PlantsViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "editPlant" {
             var cell = sender as! PlantsTableViewCell
-            var destination = segue.destinationViewController as! EditPlantViewController
+            let destination = segue.destinationViewController as! EditPlantViewController
             destination.plant = sender!.plant
         }
     }
@@ -122,7 +122,7 @@ extension PlantsViewController: UITableViewDelegate {
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             let plant = plants[indexPath.row] as Plant
-            let realm = Realm()
+            let realm = try! Realm()
             realm.write() {
                 realm.delete(plant)
             }

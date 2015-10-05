@@ -22,13 +22,13 @@ class Plant: Object {
     dynamic var notify: Bool = true
     dynamic var created: String = "Jan 1, 1970, 12:00 AM"
     dynamic var schedule: Schedule?
-    dynamic var completed: List<Day> = List<Day>()
+    let completed: List<Day> = List<Day>()
     
     var weatherEffects: Dictionary<Int, (Bool, Int)>? {
         didSet {
             dispatch_async(dispatch_get_main_queue()) {
                 autoreleasepool {
-                    let realm = Realm()
+                    let realm = try! Realm()
                     realm.write() {
                         self.schedule = Schedule(size: self.size, type: self.type, light: self.light, location: self.location, firstDay: self.firstDay, weatherEffects: self.weatherEffects, completed: self.completed)
                         realm.add(self)
@@ -56,12 +56,12 @@ class Plant: Object {
                     if day.complete {
                         dispatch_async(dispatch_get_main_queue()) {
                             autoreleasepool {
-                                let realm = Realm()
+                                let realm = try! Realm()
                                 realm.write() {
                                     day.complete = false
                                     for x in self.completed {
                                         if x.number == dayNum {
-                                            var index = self.completed.indexOf(x)
+                                            let index = self.completed.indexOf(x)
                                             if let index = index {
                                                 self.completed.removeAtIndex(index)
                                             }
@@ -75,8 +75,8 @@ class Plant: Object {
                     } else {
                         dispatch_async(dispatch_get_main_queue()) {
                             autoreleasepool {
-                                let realm = Realm()
-                                var thisDay = Day(number: dayNum, complete: true, amount: 0.0)
+                                let realm = try! Realm()
+                                let thisDay = Day(number: dayNum, complete: true, amount: 0.0)
                                 realm.write() {
                                     day.complete = true
                                     self.completed.append(thisDay)
