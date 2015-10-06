@@ -27,19 +27,41 @@ class EditPlantViewController: UIViewController {
     @IBOutlet weak var zipcode: UITextField!
     @IBOutlet weak var leftButton: UIBarButtonItem!
     @IBOutlet weak var scheduleContainer: UIView!
+    @IBOutlet weak var scrollView: UIScrollView!
+    
+    var activeField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name:UIKeyboardWillShowNotification, object: nil);
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name:UIKeyboardWillHideNotification, object: nil);
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "DismissKeyboard")
+        view.addGestureRecognizer(tap)
     }
     
-    func keyboardWillShow(sender: NSNotification) {
-        self.view.frame.origin.y -= 215
+    func keyboardWillShow(aNotification: NSNotification) {
+        let info: [NSObject : AnyObject] = aNotification.userInfo!
+        let keyPadFrame: CGRect = UIApplication.sharedApplication().keyWindow!.convertRect(info[UIKeyboardFrameBeginUserInfoKey]!.CGRectValue, fromView: self.view)
+        let kbSize: CGSize = keyPadFrame.size
+        let activeRect: CGRect = self.view.convertRect(activeField.frame, fromView: activeField.superview)
+        var aRect: CGRect = self.view.bounds
+        aRect.size.height -= (kbSize.height)
+        var origin: CGPoint = activeRect.origin
+        origin.y -= scrollView.contentOffset.y
+        if !CGRectContainsPoint(aRect, origin) {
+            let scrollPoint: CGPoint = CGPointMake(0.0, CGRectGetMaxY(activeRect) - (aRect.size.height))
+            scrollView.setContentOffset(scrollPoint, animated: true)
+        }
     }
     
     func keyboardWillHide(sender: NSNotification) {
-        self.view.frame.origin.y += 215
+        let contentInsets: UIEdgeInsets = UIEdgeInsetsZero
+        scrollView.contentInset = contentInsets
+        scrollView.scrollIndicatorInsets = contentInsets
+    }
+    
+    func DismissKeyboard() {
+        view.endEditing(true)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -118,6 +140,18 @@ class EditPlantViewController: UIViewController {
         self.navigationController!.popToRootViewControllerAnimated(true)
     }
 
+}
+
+extension EditPlantViewController: UITextFieldDelegate {
+    
+    func textFieldDidBeginEditing(textField: UITextField) {
+        activeField = textField
+    }
+    
+    func textFieldDidEndEditing(textField: UITextField) {
+        activeField = textField
+    }
+    
 }
 
 

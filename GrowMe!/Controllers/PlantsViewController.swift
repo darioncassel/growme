@@ -37,35 +37,30 @@ class PlantsViewController: UIViewController {
         
         let realm = try! Realm()
         plants = realm.objects(Plant).sorted("created", ascending: false)
-        let notifications = UIApplication.sharedApplication().scheduledLocalNotifications as [UILocalNotification]!
-        print(notifications)
-        for notification in notifications {
-            UIApplication.sharedApplication().cancelLocalNotification(notification)
-        }
+        
+        UIApplication.sharedApplication().cancelAllLocalNotifications()
         let tomorrow = DateHelper.today() + 1
         var count = 0
         for plant in plants {
-            let days = plant.schedule?.freq
-            if let days = days {
-                var contains = false
-                for day in days {
-                    if day.number == tomorrow && !day.notified && !day.complete{
-                        contains = true
-                        realm.write() {
-                            day.notified = true
+            if plant.notify {
+                let days = plant.schedule?.freq
+                if let days = days {
+                    var contains = false
+                    for day in days {
+                        if day.number == tomorrow && !day.complete{
+                            contains = true
                         }
                     }
-                }
-                if contains {
-                    count++
+                    if contains {
+                        count++
+                    }
                 }
             }
         }
         if count > 0 {
-            let today = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!.components(.Day, fromDate: NSDate())
-            today.day = today.day + 1
             let notification = UILocalNotification()
-            notification.fireDate = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)?.dateFromComponents(today)
+            notification.timeZone = NSTimeZone.defaultTimeZone()
+            notification.fireDate = NSDate().tomorrowAt8am
             if count == 1 {
                 notification.alertBody = "1 plant needs water!"
             } else {
@@ -85,7 +80,6 @@ class PlantsViewController: UIViewController {
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "editPlant" {
-            var cell = sender as! PlantsTableViewCell
             let destination = segue.destinationViewController as! EditPlantViewController
             destination.plant = sender!.plant
         }
@@ -128,6 +122,23 @@ extension PlantsViewController: UITableViewDelegate {
             }
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         }
+    }
+    
+}
+
+extension NSDate {
+    
+    var day: Int {
+        return NSCalendar.currentCalendar().components(NSCalendarUnit.Day, fromDate: self).day
+    }
+    var month: Int {
+        return NSCalendar.currentCalendar().components(NSCalendarUnit.Month, fromDate: self).month
+    }
+    var year: Int {
+        return NSCalendar.currentCalendar().components(NSCalendarUnit.Year,  fromDate: self).year
+    }
+    var tomorrowAt8am: NSDate {
+        return  NSCalendar.currentCalendar().dateWithEra(1, year: year, month: month, day: day+1, hour: 8, minute: 0, second: 0, nanosecond: 0)!
     }
     
 }

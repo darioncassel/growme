@@ -284,6 +284,7 @@
 				TargetAttributes = {
 					FC6E8B921B781DD6008F4FDA = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = WMETKGH234;
 					};
 					FC6E8BA71B781DD6008F4FDA = {
 						CreatedOnToolsVersion = 6.4;
@@ -572,10 +573,13 @@
 			baseConfigurationReference = 361D6B8525D02E4D6242F05C /* Pods-GrowMe.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "GrowMe!/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "CastleWorks.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = GrowMe;
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -584,10 +588,13 @@
 			baseConfigurationReference = 2626D4A0002FD3A13C756DAE /* Pods-GrowMe.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "GrowMe!/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "CastleWorks.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = GrowMe;
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
