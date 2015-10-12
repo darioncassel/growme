@@ -38,36 +38,61 @@ class PlantsViewController: UIViewController {
         let realm = try! Realm()
         plants = realm.objects(Plant).sorted("created", ascending: false)
         
-        UIApplication.sharedApplication().cancelAllLocalNotifications()
-        let tomorrow = DateHelper.today() + 1
-        var count = 0
+        // Reset completed and notified on different week
         for plant in plants {
-            if plant.notify {
-                let days = plant.schedule?.freq
-                if let days = days {
-                    var contains = false
-                    for day in days {
-                        if day.number == tomorrow && !day.complete{
-                            contains = true
+            let formatter = NSDateFormatter()
+            formatter.dateFormat = "MMM d, yyyy, h:mm:ss a z"
+            let date = formatter.dateFromString(plant.created)
+            if let date = date {
+                if NSDate().differentWeek(date) {
+                    realm.write {
+                        let currentDate = NSDateFormatter.localizedStringFromDate(NSDate(), dateStyle: .MediumStyle, timeStyle: .LongStyle)
+                        plant.created = currentDate
+                        let days = plant.schedule?.freq
+                        if let days = days {
+                            for day in days {
+                                day.complete = false
+                                day.notified = false
+                            }
                         }
-                    }
-                    if contains {
-                        count++
                     }
                 }
             }
         }
-        if count > 0 {
-            let notification = UILocalNotification()
-            notification.timeZone = NSTimeZone.defaultTimeZone()
-            notification.fireDate = NSDate().tomorrowAt8am
-            if count == 1 {
-                notification.alertBody = "1 plant needs water!"
-            } else {
-                notification.alertBody = "\(count) plants need water"
+        
+        UIApplication.sharedApplication().cancelAllLocalNotifications()
+        for i in 1...5 {
+            let tomorrow = DateHelper.today() + i
+            var count = 0
+            for plant in plants {
+                if plant.notify {
+                    let days = plant.schedule?.freq
+                    if let days = days {
+                        var contains = false
+                        for day in days {
+                            if day.number == tomorrow && !day.complete{
+                                contains = true
+                            }
+                        }
+                        if contains {
+                            count++
+                        }
+                    }
+                }
             }
-            notification.applicationIconBadgeNumber = count
-            UIApplication.sharedApplication().scheduleLocalNotification(notification)
+            if count > 0 {
+                let notification = UILocalNotification()
+                notification.timeZone = NSTimeZone.defaultTimeZone()
+                notification.fireDate = NSDate().dayAt8am(i)
+                if count == 1 {
+                    notification.alertBody = "1 plant needs water!"
+                } else {
+                    count++
+                    notification.alertBody = "\(count) plants need water"
+                }
+                notification.applicationIconBadgeNumber = count
+                UIApplication.sharedApplication().scheduleLocalNotification(notification)
+            }
         }
     }
 
@@ -137,8 +162,16 @@ extension NSDate {
     var year: Int {
         return NSCalendar.currentCalendar().components(NSCalendarUnit.Year,  fromDate: self).year
     }
-    var tomorrowAt8am: NSDate {
-        return  NSCalendar.currentCalendar().dateWithEra(1, year: year, month: month, day: day+1, hour: 8, minute: 0, second: 0, nanosecond: 0)!
+    func dayAt8am(i: Int) -> NSDate {
+        return  NSCalendar.currentCalendar().dateWithEra(1, year: year, month: month, day: day+i, hour: 8, minute: 0, second: 0, nanosecond: 0)!
+    }
+    func weeksFrom(date:NSDate) -> Int{
+        return NSCalendar.currentCalendar().components(.WeekOfYear, fromDate: date, toDate: self, options: []).weekOfYear
+    }
+    func differentWeek(date: NSDate) -> Bool {
+        let todayWeek = NSCalendar.currentCalendar().components(.WeekOfYear, fromDate: self).weekOfYear
+        let oldWeek = NSCalendar.currentCalendar().components(.WeekOfYear, fromDate:date).weekOfYear
+        return todayWeek != oldWeek
     }
     
 }
