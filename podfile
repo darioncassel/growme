@@ -1,0 +1,15 @@
+# Uncomment this line to define a global platform for your project
+# platform :ios, '6.0'
+
+use_frameworks!
+
+target 'GrowMe' do
+	pod 'RealmSwift'
+	pod 'Mixpanel'
+end
+
+target 'GrowMeTests' do
+	pod 'RealmSwift'
+	pod 'Mixpanel'
+end
+

@@ -13,7 +13,7 @@ class WeatherHelper {
     
     static func getWeatherInfo(plant: Plant, zip: String, callback: (Dictionary<Int, (Bool, Int)>) -> ())  {
         
-        let zipurl = NSURL(string: "http://api.openweathermap.org/data/2.5/weather?zip=\(zip),us&APPID=\(APIkeys().openweathermap)")
+        let zipurl = NSURL(string: "http://api.openwe athermap.org/data/2.5/weather?zip=\(zip),us&APPID=\(APIkeys().openweathermap)")
         NSURLSession.sharedSession().dataTaskWithURL(zipurl!) { data, response, error in
             
             let jsonResult = (try! NSJSONSerialization.JSONObjectWithData(data!, options: [])) as! NSDictionary
